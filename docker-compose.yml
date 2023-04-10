@@ -1,0 +1,15 @@
+version: '3'
+services:
+  pgbouncer:
+    env_file:
+      - .env
+    image: andonisan/pgbouncer:latest
+    container_name: pgbouncer
+    restart: always
+    ports:
+      - "6432:6432"
+    logging:
+      options:
+        max-size: "50M"
+        max-file: "3"
+  
